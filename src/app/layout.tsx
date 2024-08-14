@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>{children}</body>
+      <body className={cn("flex flex-col min-h-screen bg-background text-foreground font-sans antialiased", fontSans.variable)}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
