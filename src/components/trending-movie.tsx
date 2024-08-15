@@ -26,8 +26,8 @@ async function TrendingMovie() {
           </TabsList>
         </div>
         <TabsContent value="day">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {dataTrendingMovieDay.results.slice(0,18).map((movie) => (
+          <div className="grid grid-cols-2 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {dataTrendingMovieDay.results.map((movie) => (
               <Link key={movie.id} href={`movie/${movie.id}`} className="group relative rounded-lg overflow-hidden" prefetch={false}>
                 <Image
                   src={`${BASE_URL_IMAGE}/w500${movie.poster_path}`}
@@ -50,8 +50,8 @@ async function TrendingMovie() {
           </div>
         </TabsContent>
         <TabsContent value="week">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {dataTrendingMovieWeek.results.slice(0,18).map((movie) => (
+          <div className="grid grid-cols-2 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {dataTrendingMovieWeek.results.map((movie) => (
               <Link key={movie.id} href={`movie/${movie.id}`} className="group relative rounded-lg overflow-hidden" prefetch={false}>
                 <Image
                   src={`${BASE_URL_IMAGE}/w500${movie.poster_path}`}

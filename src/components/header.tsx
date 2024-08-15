@@ -1,32 +1,98 @@
-import { FilmIcon, SearchIcon } from "lucide-react";
-import Image from "next/image";
+import { SearchIcon } from "lucide-react";
 import Link from "next/link";
 
-import { Button } from "./ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { Input } from "./ui/input";
 
 function Header() {
   return (
     <header className="sticky top-0 z-30 bg-background border-b">
       <div className="container px-4 md:px-6 mx-auto flex items-center h-16">
-        <Link href="#" className="flex items-center gap-2 font-bold text-lg" prefetch={false}>
-          <FilmIcon className="w-6 h-6 text-primary" />
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg text-red-600" prefetch={false}>
           CineFlix
         </Link>
-        <nav className="ml-10 hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="#" className="hover:text-primary" prefetch={false}>
-            Home
-          </Link>
-          <Link href="#" className="hover:text-primary" prefetch={false}>
-            Movies
-          </Link>
-          <Link href="#" className="hover:text-primary" prefetch={false}>
-            TV Shows
-          </Link>
-          <Link href="#" className="hover:text-primary" prefetch={false}>
-            New & Popular
-          </Link>
-        </nav>
+        <NavigationMenu className="ml-10 hidden md:flex items-center gap-6 text-sm font-medium">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Movies</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex min-w-[165px] flex-col gap-3 p-3">
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/movie/popular"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Popular Movies
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/movie/top-rated"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Top Rated Movies
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/movie/trending"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Trending Movies
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/movie/upcoming"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Upcoming Movies
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>TV</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex flex-col min-w-[180px] gap-3 p-3">
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/tv/popular"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Popular TV Shows
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/tv/top-rated"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Top Rated TV Shows
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/tv/trending"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Trending TV Shows
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href={"/tv/upcoming"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Upcoming TV Shows
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
         <div className="ml-auto flex items-center gap-4">
           <div className="relative">
             <Input type="search" placeholder="Search titles..." className="bg-muted/40 border-none focus:ring-0 focus:border-none rounded-full pr-10" />
@@ -34,9 +100,6 @@ function Header() {
               <SearchIcon className="w-5 h-5 text-muted-foreground" />
             </div>
           </div>
-          <Button variant="ghost" size="icon" className="rounded-full">
-            <Image src="/placeholder.svg" width={36} height={36} alt="Avatar" className="rounded-full" style={{ aspectRatio: "36/36", objectFit: "cover" }} />
-          </Button>
         </div>
       </div>
     </header>
