@@ -43,6 +43,16 @@ export const getNowPlayingMovies = async () => {
   }
 }
 
+export const getUpcomingMovies = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/upcoming?api_key=${API_KEY}`);
+    return response.data as IResponse<IMovie[]>
+  } catch (error: any) {
+    const message = error.response?.data.status_message || error.message;
+    throw new Error(message);
+  }
+}
+
 export const getDetailMovies = async (movie_id: number) => {
   try {
     const response = await axios.get(`${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}`);

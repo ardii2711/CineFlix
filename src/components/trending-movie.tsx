@@ -18,10 +18,10 @@ async function TrendingMovie() {
           <h2 className="text-2xl font-bold">Trending Now</h2>
           <TabsList className="bg-background flex gap-2 border rounded-lg">
             <TabsTrigger className="bg-secondary text-primary rounded-lg" value="day">
-              Day
+              Today
             </TabsTrigger>
             <TabsTrigger className="bg-secondary text-primary rounded-lg" value="week">
-              Week
+              This Week
             </TabsTrigger>
           </TabsList>
         </div>
