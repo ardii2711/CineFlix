@@ -24,7 +24,7 @@ function Header() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Movies</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="flex min-w-[165px] flex-col gap-3 p-3">
+                <ul className="flex min-w-[180px] flex-col gap-3 p-3">
                   <li>
                     <NavigationMenuLink asChild>
                       <Link href={"/movie/popular"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
@@ -34,15 +34,15 @@ function Header() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link href={"/movie/top-rated"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                      <Link href={"/movie/top_rated"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
                         Top Rated Movies
                       </Link>
                     </NavigationMenuLink>
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link href={"/movie/trending"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
-                        Trending Movies
+                      <Link href={"/movie/now_playing"} className="hover:bg-primary hover:text-secondary rounded-md p-2">
+                        Now Playing Movies
                       </Link>
                     </NavigationMenuLink>
                   </li>

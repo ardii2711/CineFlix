@@ -22,7 +22,7 @@ export default async function Home() {
       <section className="container px-4 md:px-6 mx-auto">
         <div className="flex justify-between items-center pb-2 border-b mb-3 md:mb-6">
           <h2 className="text-2xl font-bold">Top Rated Movies</h2>
-          <Link href="/movie/" className="text-primary font-semibold hover:underline">
+          <Link href="/movie/top_rated" className="text-primary font-semibold hover:underline">
             View All
           </Link>
         </div>
